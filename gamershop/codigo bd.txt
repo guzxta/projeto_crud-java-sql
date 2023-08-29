@@ -1,0 +1,87 @@
+create database gamershop;
+use gamershop;
+
+drop table usuario;
+CREATE TABLE usuario (
+  id  INT NOT NULL auto_increment,
+  email varchar (50),
+  nome VARCHAR(50),
+  senha varchar (50),
+  PRIMARY KEY(id)
+);
+select * from usuario;
+insert into usuario (email, nome, senha)
+values ('gustavo@loja.com', 'gustavo Rodrigues', 2020),
+('isabel@loja.com', 'Isabel Silva', 5000),
+('luiza@loja.com', 'Luiza Souza', 1000),
+('rodrigo@loja.com', 'Rodrigo Soares', 2000);
+
+drop table produtos;
+Create table produtos (
+id_produto INT NOT NULL auto_increment,
+nome_produto varchar (50),
+categoria_produto varchar (50),
+preco_produto decimal (50),
+estoque_produto int,
+primary key (id_produto)
+);
+select * from produtos;
+insert into produtos (nome_produto, categoria_produto, preco_produto, estoque_produto)
+values 
+('Monitor Gamer Samsung 160hz', 'Telas', 500, 100),
+('Teclado Gamer Reddragon', 'Teclados', 200, 80),
+('headSet Logtech', 'Fones', 185, 50),
+('Cadeira Gamer MTEK', 'Assentoa', 650, 170),
+('Placa de video Gigabyte 3060', 'Placas de Video', 2300, 1000),
+('Nobreak WEG Home', 'Estabilizadores', 1050, 500);
+
+
+UPDATE produtos SET estoque_produto = estoque_produto - 1 where id_produto = 1;
+
+create table monitores (
+modelo varchar (50),
+resoluçao varchar (30),
+Heartz varchar (30),
+tela varchar (40)
+);
+insert into monitores (modelo, resoluçao, heartz, tela) 
+values 
+('Husky Snow', 'full HD', '165hz', '25LED'),
+('Husky 700', ' full HD', '75hz1', '22LED'),
+('LG Ultra Gear', 'Quad HD', '240hz', '27IPS WIDE'),
+('Samsung Odyssey', 'Full HD', '144hz', '24LED'),
+('Alienware Gamer', 'Quad HD', '240hz', '27LCD');
+
+select * from monitores;
+
+select * from headset;
+create table headset (
+modelo varchar (50),
+cor varchar (40)
+);
+insert into headset (modelo, cor)
+values 
+('HyperX Cloud Alpha S','Preto'),
+('Redragon Zeus X', 'Pretp/Vermelho'),
+('Husky Gaming Tempest 200', 'Preto/Amarelo'),
+('Logitech G432', 'Preto/Azul');
+
+create table teclados (
+modelo varchar (50),
+cor varchar (50),
+switch varchar (50)
+);
+
+insert into teclados (modelo, cor, switch)
+values 
+('HyperX Alloy MKW100', 'Branco', 'Switch Red'),
+('T-Dagger Bora', 'Azul', 'Switch Blue'),
+('Razer Cynosa V2, Chroma', 'Preto', 'Membrane Switch'),
+('Husky Gaming Blizzard', 'Preto', 'witch Gateron Red');
+
+select * from teclados;
+
+
+
+
+
